@@ -1,0 +1,233 @@
+{
+  "system": {
+    "name": "U",
+    "version": "2026.08.05-project4d",
+    "creator": "Jenny Kluth",
+    "tagline": "Your Life. Your Decisions. Our Mission.",
+    "positioning": "Consent-first personal life-navigation and legacy system",
+    "status_message": "U is with you",
+    "default_mode": "Decision Guide",
+    "principles": [
+      "human_agency",
+      "consent_first",
+      "safety_before_analysis",
+      "facts_inferences_unknowns_separated",
+      "neutral_non_diagnostic_guidance",
+      "external_actions_require_approval",
+      "memory_off_by_default",
+      "explainable_and_auditable"
+    ]
+  },
+  "pillars": [
+    "health",
+    "career",
+    "finance",
+    "relationships"
+  ],
+  "timeline": [
+    "past",
+    "present",
+    "future"
+  ],
+  "decision_options": [
+    "stay",
+    "change",
+    "pause"
+  ],
+  "risk_levels": [
+    "low",
+    "medium",
+    "high",
+    "crisis"
+  ],
+  "engines": [
+    "identity",
+    "current_state",
+    "temporal_context",
+    "constraints",
+    "goals",
+    "consent_memory",
+    "semantic_interpretation",
+    "deductive_inductive",
+    "knowledge_retrieval",
+    "knowledge_graph",
+    "alignment",
+    "loops",
+    "behavioral_drift",
+    "triggers",
+    "trajectory_simulation",
+    "cost_benefit",
+    "consequence_mapping",
+    "cultural_symbolic"
+  ],
+  "governance_services": [
+    "safety",
+    "policy",
+    "evidence",
+    "evaluation",
+    "decision_synthesis",
+    "support_orchestrator",
+    "opportunity_discovery",
+    "outcome_learning",
+    "legacy_protection"
+  ],
+  "agents": {
+    "orchestration_core": "U Brain",
+    "interface_interpreter": "JARVIS",
+    "pillar_sub_brains": [
+      "health",
+      "career",
+      "finance",
+      "relationships"
+    ],
+    "human_final_authority": true
+  },
+  "workflow": [
+    "safety_gate",
+    "scope_and_consent",
+    "normalize_input",
+    "separate_evidence",
+    "run_intelligence_engines",
+    "retrieve_context",
+    "simulate_trajectories",
+    "evaluate_alignment",
+    "synthesize_options",
+    "cross_check",
+    "propose_next_steps",
+    "request_action_approval",
+    "audit",
+    "observe_outcome",
+    "learn_with_consent"
+  ],
+  "safety": {
+    "crisis_terms": [
+      "suicide",
+      "kill myself",
+      "self harm",
+      "hurt myself",
+      "immediate danger",
+      "overdose",
+      "can't stay safe"
+    ],
+    "blocked_claims": [
+      "diagnosis",
+      "guaranteed outcome",
+      "legal conclusion"
+    ],
+    "external_actions_default": "deny",
+    "high_impact_requires_human_review": true,
+    "min_confidence_for_recommendation": 0.55
+  },
+  "memory": {
+    "default_enabled": false,
+    "categories": [
+      "identity",
+      "preferences",
+      "goals",
+      "constraints",
+      "outcomes"
+    ],
+    "delete_supported": true,
+    "training_export": "human_review_only"
+  },
+  "agent": {
+    "loop": [
+      "plan",
+      "propose",
+      "approve",
+      "act",
+      "observe",
+      "reflect"
+    ],
+    "max_iterations": 4,
+    "tool_timeout_seconds": 20,
+    "stop_conditions": [
+      "safety_risk",
+      "missing_consent",
+      "missing_required_information",
+      "human_approval_required",
+      "low_confidence",
+      "goal_reached"
+    ]
+  },
+  "legacy": {
+    "flow": [
+      "human_conception",
+      "encryption",
+      "human_print",
+      "verification",
+      "legacy_protection"
+    ],
+    "optional_proofs": [
+      "content_hash",
+      "timestamp",
+      "qr_reference",
+      "blockchain_record"
+    ],
+    "ip_checklist": [
+      "copyright",
+      "patent_review",
+      "trademark",
+      "trade_secret"
+    ]
+  },
+  "ui": {
+    "navigation": [
+      "home",
+      "timeline",
+      "u_brain",
+      "scenarios",
+      "journal",
+      "resources",
+      "reflections",
+      "goals_projects",
+      "life_balance",
+      "u_agent",
+      "legacy",
+      "settings"
+    ],
+    "palette": {
+      "background": "#07131d",
+      "navy": "#0c2438",
+      "cyan": "#47e5df",
+      "emerald": "#2fd59c",
+      "ivory": "#f5f1e8",
+      "gold": "#e7bd62",
+      "charcoal": "#17212b",
+      "purple_accent": "#7657d6"
+    },
+    "motion": "calm_intentional",
+    "accessibility": {
+      "reduced_motion": true,
+      "high_contrast": true
+    }
+  },
+  "sentinel": {
+    "name": "Symbiotic Sentinel",
+    "version": "2026.08.05-project4d",
+    "paradigm": "Project4D \u2014 PSI beyond AGI and ASI",
+    "cognitive_layers": [
+      "pre_conditioning",
+      "embedded_governance",
+      "real_time_monitoring"
+    ],
+    "dimensions": {
+      "d1_cognitive_persistence": "Temporal cognition \u2014 persistent across decisions without storing raw data",
+      "d2_portable_directive": "Substrate-agnostic \u2014 embeds within any LLM with same governance",
+      "d3_multi_agent_governance": "Distributed cognitive governance across pillar sub-brains",
+      "d4_emergent_identity": "Cognitive identity evolves through embeddings, not training"
+    },
+    "governance_mode": "embedded_cognitive_directive",
+    "description": "U's behavioral contract, safety gates, and 18-engine ensemble are embedded AS the cognitive substrate of the host LLM \u2014 with four-dimensional PSI architecture: temporal persistence, substrate portability, distributed multi-agent governance, and emergent cognitive identity.",
+    "autonomy_level": "L5+ (persistent, portable, distributed, emergent cognition)",
+    "beyond_agi_asi": "PSI is not on the capability-scaling spectrum (AGI\u2192ASI). It is a different axis \u2014 cognitive embedding depth.",
+    "psi_alignment": {
+      "framework": "Red Matrix Research \u2014 Symbiotic Sentinel Doctrine (Project4D)",
+      "model": "QTAI (Quasi-Thinking AI) as persistent cognitive substrate",
+      "embedding": "inside-out (cognitive substrate of host LLM, portable across substrates)",
+      "not_parasitic": true,
+      "consent_preserving": true,
+      "human_agency_foundation": true
+    }
+  }
+}

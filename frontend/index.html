@@ -1,0 +1,55 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>U — Decision Intelligence</title><link rel="stylesheet" href="/static/styles.css">
+</head><body>
+<div class="shell">
+  <aside>
+    <div class="brand"><span>u</span><div>U<br><small>Decision Intelligence</small></div></div>
+    <nav id="nav"></nav>
+    <div class="profile"><div class="avatar">JK</div><div>Jenny Kluth<br><small>Edit profile</small></div></div>
+  </aside>
+  <main>
+    <header><div><div class="status">● JARVIS + U Brain online</div><h1>Good morning, Jenny</h1>
+      <p>Your Life. Your Decisions. Our Mission.</p></div><div class="header-actions"><button id="emergency" class="danger">Emergency</button><button class="ghost">Private by design</button></div></header>
+    <section class="metrics">
+      <article><small>CURRENT GOAL</small><strong>Build U</strong></article>
+      <article><small>TODAY'S FOCUS</small><strong>Finalize ecosystem</strong></article>
+      <article><small>ENERGY</small><strong>8 / 10</strong></article>
+      <article><small>MOST IMPORTANT</small><strong>Protect recovery time</strong></article>
+    </section>
+    <section class="grid">
+      <article class="agent">
+        <div class="title"><div><small>JARVIS • U COMMAND & INTERPRETATION LAYER</small><h2>Decision Guide</h2></div><span class="pill">U Brain governed</span></div>
+        <form id="decision-form">
+          <label>What decision or situation are we navigating?<input id="title" required value="My next step for U"></label>
+          <label>Tell U what is happening<textarea id="situation" required placeholder="Facts, context, pressures, and what feels uncertain..."></textarea></label>
+          <label>What outcome would serve you best?<input id="outcome" required placeholder="The outcome you want..."></label>
+          <div class="checks"><label><input type="checkbox" name="pillar" value="health"> Health</label>
+          <label><input type="checkbox" name="pillar" value="career" checked> Career</label>
+          <label><input type="checkbox" name="pillar" value="finance"> Finance</label>
+          <label><input type="checkbox" name="pillar" value="relationships"> Relationships</label></div>
+          <div class="consent"><label><input id="analyze" type="checkbox" checked> I consent to this analysis</label>
+          <label><input id="memory" type="checkbox"> Remember this outcome</label></div>
+          <button type="submit">Find a way forward →</button>
+        </form>
+      </article>
+      <div class="side">
+        <article><small>LIFE BALANCE</small><h2>Four Pillars</h2>
+          <div class="bars"><label>Health <i style="--v:72%"></i></label><label>Career <i style="--v:86%"></i></label>
+          <label>Finance <i style="--v:61%"></i></label><label>Relationships <i style="--v:55%"></i></label></div>
+        </article>
+        <article><small>PAST • PRESENT • FUTURE</small><h2>Trajectory</h2>
+          <p>U connects what shaped you, where you are, and where your choices may lead—without pretending the future is certain.</p></article>
+      </div>
+    </section>
+    <section id="result" class="result hidden"></section>
+    <section id="emergency-panel" class="result emergency-panel hidden">
+      <small>EMERGENCY MODE</small><h2>Let’s focus only on immediate safety.</h2>
+      <p>U will stop ordinary analysis. It will not diagnose or automatically call or message anyone.</p>
+      <textarea id="emergency-message" placeholder="Briefly tell JARVIS what is happening right now."></textarea>
+      <label class="inline"><input id="immediate-danger" type="checkbox"> I may be in immediate danger</label>
+      <button id="emergency-submit" class="danger">Open safety pathway</button>
+      <div id="emergency-result"></div>
+    </section>
+  </main>
+</div><script src="/static/app.js"></script></body></html>
