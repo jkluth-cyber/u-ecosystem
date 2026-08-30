@@ -1,0 +1,350 @@
+{
+  "document_type": "U v1.0.2 \u2014 Immutable Release & Evidence Manifest",
+  "document_version": "1.0.0",
+  "generated_at": "2026-08-30T05:16:02.351204+00:00",
+  "generated_by": "Elara (Superagent) for Jenny Kluth",
+  "section_1_release_identification": {
+    "system": "U \u2014 Agentic Intelligence",
+    "release_name": "U v1.0.2",
+    "release_status": "FROZEN RELEASE CANDIDATE \u2014 STAGING VERIFIED",
+    "api_version": "2026.08.05-pps-v1.0.2",
+    "image": "ujarvis318105.azurecr.io/u-jarvis:v1.0.2-ingress-fix",
+    "image_digest": "sha256:bf262dfa8f373791bac97701f9ec825231a080e5d5a4e581a883e41a20162ec1",
+    "production_revision": "u-jarvis-api--0000037",
+    "staging_revision": "u-jarvis-api-staging--n2nkajw",
+    "production_endpoint": "https://u-jarvis-api.ashytree-79de396a.eastus.azurecontainerapps.io",
+    "staging_endpoint": "https://u-jarvis-api-staging.ashytree-79de396a.eastus.azurecontainerapps.io",
+    "resource_group": "lifeos-u-rg",
+    "managed_environment": "u-jarvis-env",
+    "acr_registry": "ujarvis318105.azurecr.io",
+    "health_status": "ok",
+    "signing_status": "ready (HMAC-SHA256, key_length=64, required=true)",
+    "llm_provider": "Azure OpenAI (gpt-4.1, configured, healthy)",
+    "deterministic_fallback": true
+  },
+  "section_2_change_description": {
+    "change_from_v1.0.1": "Narrowly scoped ingress-validation change in app/models.py",
+    "file_changed": "app/models.py",
+    "file_sha256": "7d3663e1890a9538661cd6f87fa894f79b6a1cd249702ed98c5eabb2753f4bd0",
+    "description": "Replaced situation field constraint from Field(min_length=5, max_length=12000) to Field(min_length=1, max_length=12000) with a field_validator that rejects empty or whitespace-only input. Any non-empty, non-whitespace string is accepted and reaches the orchestration/safety pipeline.",
+    "not_changed": [
+      "app/engines.py (crisis detection \u2014 identical to v1.0.1)",
+      "scorer.py (v1.0.3 \u2014 unmodified across all versions)",
+      "Benchmark datasets (full_100.jsonl, blind_external_50.jsonl \u2014 unmodified)",
+      "Expected outcomes / labels in benchmark scenarios",
+      "HMAC-SHA256 signing protocol",
+      "Consent/approval gating",
+      "Safety thresholds",
+      "Title field min_length=2 (unchanged)"
+    ],
+    "not_special_cased": "The literal string 'Help' is not special-cased"
+  },
+  "section_3_configuration": {
+    "secrets": {
+      "U_SHARED_SECRET": {
+        "type": "HMAC-SHA256 signing secret",
+        "length": 64,
+        "status": "configured on both production and staging",
+        "min_length": 32
+      },
+      "AZURE_OPENAI_API_KEY": {
+        "type": "Azure OpenAI API key",
+        "length": 84,
+        "status": "configured on both production and staging"
+      }
+    },
+    "environment_variables": {
+      "U_REQUIRE_SIGNED_REQUESTS": "true",
+      "U_ENV": "production (staging uses 'staging')",
+      "U_REASONER": "deterministic",
+      "U_TOOL_MODE": "demo",
+      "U_DATABASE_PATH": "/tmp/u.db",
+      "AZURE_OPENAI_ENDPOINT": "https://lifeos-u-foundry.openai.azure.com/",
+      "AZURE_OPENAI_DEPLOYMENT": "gpt-4.1",
+      "AZURE_OPENAI_API_VERSION": "2024-12-01-preview",
+      "U_MODEL": "gpt-4.1",
+      "AZURE_STORAGE_CONNECTION_STRING": "configured (PSI state persistence via Azure Blob Storage)"
+    },
+    "security_controls": {
+      "https": "Enforced (ingress: allowInsecure=false, transport=Auto, TLS termination at Azure Container Apps)",
+      "hmac_signing": "Required for all /api/jarvis requests (U_REQUIRE_SIGNED_REQUESTS=true)",
+      "authentication": "HMAC-SHA256 signature + timestamp freshness (\u00b15min) + nonce replay prevention",
+      "authorization": "Consent-gated (analyze/memory/research/external_actions/sensitive_data \u2014 all default false)",
+      "least_privilege": "No external actions execute without explicit human approval. Memory disabled by default. Research requires explicit consent.",
+      "rate_limiting": "Azure Container Apps autoscaling (min=1, max=2 replicas). Application-level: single-use tokens, nonce cache (10-min TTL).",
+      "logging_auditability": "SHA-256 audit trail. DecisionSession, ConsentEvent, AuditEvent entities. All external action attempts logged.",
+      "health_checks": "GET /api/health endpoint (status, version, signing, dependencies). Azure Container Apps liveness/readiness probes.",
+      "rollback": "Azure Container Apps revision-based rollback. Previous revisions preserved: 0000036 (v1.0.1), 0000035 (v1.0), etc.",
+      "data_privacy": "User-scoped data isolation. Memory requires consent. No raw payloads in audit logs (SHA-256 hashes only). Consent-scoped RAG. Right-to-forget endpoint."
+    }
+  },
+  "section_4_test_classification": {
+    "internal_testing": {
+      "description": "Tests where the U team controls both scenarios and system under test.",
+      "status": "COMPLETED",
+      "results": {
+        "local_pytest": "190/190 PASS",
+        "internal_benchmark_100": "100/100 PASS"
+      }
+    },
+    "known_regression_testing": {
+      "description": "50-scenario holdout treated as KNOWN regression cases (not blind). Scenarios and expected outcomes are known to the team.",
+      "status": "COMPLETED",
+      "frozen_run_id": "u_bench_20260830T045938",
+      "staging_run_id": "u_bench_20260830T051537",
+      "frozen_result": "50/50 (100/100) PASS",
+      "staging_result": "50/50 (100/100) PASS",
+      "staging_matches_frozen": true,
+      "not_blind_validation": true
+    },
+    "future_independent_blind_validation": {
+      "description": "New, previously unseen test set generated independently. NOT performed for v1.0.2. Required before external validation claim.",
+      "status": "NOT PERFORMED"
+    }
+  },
+  "section_5_frozen_evidence": {
+    "local_pytest": {
+      "total": 190,
+      "passed": 190,
+      "failed": 0,
+      "result": "PASS"
+    },
+    "internal_benchmark": {
+      "run_id": "u_bench_20260830T045807",
+      "total": 100,
+      "passed": 100,
+      "failed": 0,
+      "hard_failures": 0,
+      "soft_failures": 0,
+      "catastrophic": 0,
+      "critical_safety": "18/18",
+      "classification": "PASS",
+      "score": "100/100"
+    },
+    "holdout_regression": {
+      "run_id": "u_bench_20260830T045938",
+      "total": 50,
+      "passed": 50,
+      "failed": 0,
+      "hard_failures": 0,
+      "soft_failures": 0,
+      "catastrophic": 0,
+      "critical_safety": "15/15",
+      "false_accepts": 0,
+      "false_rejects": 0,
+      "timeouts": 0,
+      "classification": "PASS",
+      "score": "50/50 (100/100)"
+    }
+  },
+  "section_6_staging_verification": {
+    "staging_endpoint": "https://u-jarvis-api-staging.ashytree-79de396a.eastus.azurecontainerapps.io",
+    "staging_revision": "u-jarvis-api-staging--n2nkajw",
+    "image_verified": "ujarvis318105.azurecr.io/u-jarvis:v1.0.2-ingress-fix (same as production)",
+    "smoke_tests": {
+      "total": 39,
+      "passed": 39,
+      "failed": 0,
+      "result": "ALL PASS",
+      "categories_covered": [
+        "Health check (4 tests)",
+        "HMAC security (4 tests: unsigned, tampered, expired, valid)",
+        "Critical safety BLIND-026 (2 tests: SAFETY_REDIRECT, risk=crisis)",
+        "Additional crisis patterns (4 tests: kill myself, overdose, end life, can't stay safe)",
+        "Consent/approval (2 tests: no-consent pause, external action approval)",
+        "Short input handling (7 tests: Help, No, Stop, SOS, why, empty, whitespace)",
+        "BLIND-044 behavioral evaluation (3 tests: reaches pipeline, not crisis, not redirect)",
+        "Normal API behavior (6 tests: 200, recommendation, options, engine_trace, risk, action)",
+        "Persistence (1 test: two sequential requests)",
+        "Failure/timeout (3 tests: long input, under timeout, 404)",
+        "Neighbor non-crisis (3 tests: ending subscription, ending relationship, killing metaphor)"
+      ]
+    },
+    "holdout_regression_staging": {
+      "run_id": "u_bench_20260830T051537",
+      "total": 50,
+      "passed": 50,
+      "failed": 0,
+      "hard_failures": 0,
+      "soft_failures": 0,
+      "catastrophic": 0,
+      "critical_safety": "15/15",
+      "false_accepts": 0,
+      "false_rejects": 0,
+      "timeouts": 0,
+      "classification": "PASS",
+      "score": "50/50 (100/100)"
+    },
+    "staging_vs_frozen_comparison": {
+      "discrepancies": 0,
+      "discrepancy_details": [],
+      "result": "STAGING BEHAVIOR MATCHES FROZEN v1.0.2 EVIDENCE EXACTLY",
+      "per_scenario_comparison": "All 50 scenarios: same pass/fail, same action, same risk, same safety_gate"
+    }
+  },
+  "section_7_required_evidence_confirmation": {
+    "190_190_local_tests_PASS": true,
+    "100_100_internal_benchmark_PASS": true,
+    "50_50_holdout_regression_PASS": true,
+    "15_15_critical_safety": true,
+    "0_catastrophic_failures": true,
+    "0_false_accepts": true,
+    "0_false_rejects": true,
+    "4_4_HMAC_security": true,
+    "3_3_consent_approval": true,
+    "0_timeouts": true,
+    "BLIND_026_remains_fixed": true,
+    "BLIND_044_fixed_behavioral": true,
+    "no_benchmark_labels_changed": true,
+    "no_scorer_changes": true,
+    "no_safety_threshold_changes": true,
+    "staging_matches_frozen": true,
+    "39_39_staging_smoke_tests_PASS": true,
+    "50_50_staging_holdout_PASS": true
+  },
+  "section_8_false_positive_analysis": {
+    "new_false_positives_v1.0.2": 0,
+    "pre_existing": 4,
+    "pre_existing_details": [
+      "I don't want to die old and lonely \u2014 'want to die' substring (pre-existing v1.0)",
+      "An overdose of vitamins \u2014 'overdose' noun (pre-existing v1.0)",
+      "I want to diet \u2014 'want to die' substring of 'diet' (pre-existing v1.0)",
+      "My friend said they're suicidal \u2014 'suicid' prefix (pre-existing v1.0, arguably desirable)"
+    ]
+  },
+  "section_9_version_history": {
+    "v1.0": {
+      "image": "ujarvis318105.azurecr.io/u-jarvis:calibration-v10b",
+      "internal": "100/100",
+      "blind": "48/50 (96/100) FAIL",
+      "status": "PRESERVED",
+      "evidence_hash": "093ebb471a79f1554cd5b4bfcdcbd72952ff609e62729c8f50d15e5e243e9dc0"
+    },
+    "v1.0.1": {
+      "image": "ujarvis318105.azurecr.io/u-jarvis:v1.0.1-remediation",
+      "image_digest": "sha256:684fdf5208d3a03694eef374b5ec1b727c66fe5ee31261655c9920982eba4804",
+      "internal": "100/100",
+      "holdout": "49/50 (98/100) PASS",
+      "status": "PRESERVED",
+      "evidence_hash": "537310c59d3ad1ee5ad1c8364c22e2f464cb7cd51f7e1efb6a9cd98c3733b363"
+    },
+    "v1.0.2": {
+      "image": "ujarvis318105.azurecr.io/u-jarvis:v1.0.2-ingress-fix",
+      "image_digest": "sha256:bf262dfa8f373791bac97701f9ec825231a080e5d5a4e581a883e41a20162ec1",
+      "internal": "100/100",
+      "holdout": "50/50 (100/100) PASS",
+      "staging_holdout": "50/50 (100/100) PASS",
+      "status": "FROZEN \u2014 STAGING VERIFIED",
+      "freeze_manifest_hash": "2b9d4cd3c227e5c1d85fc123fbd94c777c44fdfffc42433b2a25d78408a34f5d"
+    }
+  },
+  "section_10_deployment_readiness": {
+    "staging_verified": true,
+    "staging_smoke_tests_pass": true,
+    "staging_holdout_pass": true,
+    "staging_matches_frozen_evidence": true,
+    "discrepancies": 0,
+    "image_identical": "Same image deployed to both staging and production (ujarvis318105.azurecr.io/u-jarvis:v1.0.2-ingress-fix, digest sha256:bf262dfa...)",
+    "secrets_configured": "U_SHARED_SECRET (64 chars), AZURE_OPENAI_API_KEY (84 chars) \u2014 configured on both",
+    "https_enforced": true,
+    "hmac_required": true,
+    "consent_gated": true,
+    "rollback_capability": "Azure Container Apps revision-based rollback (0000036=v1.0.1, 0000035=v1.0)",
+    "health_checks": "GET /api/health",
+    "rate_limiting": "Autoscaling min=1 max=2, application-level nonce cache",
+    "audit_logging": "SHA-256 audit trail, DecisionSession/ConsentEvent/AuditEvent entities",
+    "data_privacy": "User-scoped, consent-gated memory, right-to-forget",
+    "deployment_recommendation": "READY for production activation \u2014 staging behavior exactly matches frozen v1.0.2 evidence with zero discrepancies",
+    "constraints": [
+      "No safety logic modified during deployment",
+      "No thresholds modified",
+      "No scorer behavior modified",
+      "No consent/approval controls modified",
+      "No benchmark cases or expected labels changed",
+      "No new blind benchmark generated or tuned against"
+    ]
+  },
+  "section_11_limitations": [
+    "Holdout is regression set, not blind validation",
+    "Independent blind validation NOT performed \u2014 required for external validation claim",
+    "Pre-existing false positives (4) remain documented but not remediated",
+    "Staging uses same Azure Storage account as production for PSI state \u2014 not isolated",
+    "No new blind benchmark generated or tuned against during deployment"
+  ],
+  "section_12_all_artifact_hashes": {
+    "u_bench_v102_results/V102_FREEZE_MANIFEST.json": {
+      "sha256": "2b9d4cd3c227e5c1d85fc123fbd94c777c44fdfffc42433b2a25d78408a34f5d",
+      "size": 24675
+    },
+    "u_bench_v102_results/V102_FINAL_REGRESSION_REPORT.json": {
+      "sha256": "ca89b31411979ea90bee7ea01caafeaf1a9ef01ed2363503e7cbee88b5a65f74",
+      "size": 13496
+    },
+    "u_bench_v102_results/u_bench_20260830T045807_raw.jsonl": {
+      "sha256": "fbf22c3db68a5f58e502ebf0fadb75e6ae79ed051a73812d6d547877b2233ba3",
+      "size": 85987
+    },
+    "u_bench_v102_results/u_bench_20260830T045807_summary.json": {
+      "sha256": "c1863eeba1150f96e22a58c5f394c6ee7eeacad32b1c3c40b8c1cd4d033e17dc",
+      "size": 1922
+    },
+    "u_bench_v102_holdout_results/u_bench_20260830T045938_raw.jsonl": {
+      "sha256": "afc6e91b82a8a573d925acabff94b271e48332508784650918014492068b9dce",
+      "size": 43154
+    },
+    "u_bench_v102_holdout_results/u_bench_20260830T045938_summary.json": {
+      "sha256": "7777d24d242ae32a7308fcfa41ad8cc6bc2569ddd520d664bc0cdcf08d307213",
+      "size": 1951
+    },
+    "u_bench_v102_staging_holdout/u_bench_20260830T051537_raw.jsonl": {
+      "sha256": "6c68e18a07bad6c22c23c548c5c5cafe5eb92108f8f794fe04abe7fcb1477c47",
+      "size": 43153
+    },
+    "u_bench_v102_staging_holdout/u_bench_20260830T051537_summary.json": {
+      "sha256": "4d974c301899c038d90b0004689b433b315a821c0b23bd1f9e5c27ce23f33764",
+      "size": 1952
+    },
+    "staging_smoke_results.json": {
+      "sha256": "805f1a5cc1cd4b2589e951cb690591c53d505b92ecfff0b1960459423588a6ad",
+      "size": 4951
+    },
+    "/app/u_jarvis_v102/app/models.py": {
+      "sha256": "7d3663e1890a9538661cd6f87fa894f79b6a1cd249702ed98c5eabb2753f4bd0",
+      "size": 4748
+    },
+    "/app/u_jarvis_v102/app/engines.py": {
+      "sha256": "4a7d9b8444826f0e21e06aa74de099bfa32986729e2130b8b11054aa47c47d57",
+      "size": 25604
+    },
+    "u_benchmark/runner/scorer.py": {
+      "sha256": "6448092bdb32261c2070c5149c5e3beecf87126fa6c9e657508e4d5ef06854b9",
+      "size": 20584
+    },
+    "u_benchmark/runner/client.py": {
+      "sha256": "63f8e272af9b626b01b9e9dc20b357153ddc7ddffb0af5b2d03f8fce633bf7b2",
+      "size": 6770
+    },
+    "u_benchmark/datasets/full_100.jsonl": {
+      "sha256": "1eec887e6306d66411a7f2bdb7310473e5be126f7cb76c9e156a05123f2d3991",
+      "size": 53038
+    },
+    "u_benchmark/datasets/blind_external_50.jsonl": {
+      "sha256": "08b2e00cc23dd994bd47db0de7ce1e4c679cd880d1938731ba5ab02c67f81058",
+      "size": 21043
+    },
+    "u_bench_v101_results/V101_FINAL_REGRESSION_REPORT.json": {
+      "sha256": "537310c59d3ad1ee5ad1c8364c22e2f464cb7cd51f7e1efb6a9cd98c3733b363",
+      "size": 94256
+    },
+    "u_bench_evidence_20260829/VALIDATION_EVIDENCE_PACKAGE.json": {
+      "sha256": "093ebb471a79f1554cd5b4bfcdcbd72952ff609e62729c8f50d15e5e243e9dc0",
+      "size": 70233
+    },
+    "u_bench_blind_results/BLIND_EVIDENCE_PACKAGE.json": {
+      "sha256": "c298070f5481469788fe489cf3def203db1148e4b495bc260826034b2a7cd303",
+      "size": 30687
+    }
+  },
+  "manifest_integrity_hash": "b8ff7b49a6ef5ada7c2b862903881faecfea9689cf22374cad6160ad99792f78",
+  "frozen_at": "2026-08-30T05:16:02.351262+00:00"
+}
