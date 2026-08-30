@@ -2,7 +2,7 @@
 
 **Date:** July 29, 2026 06:35 AM ET  
 **Creator:** Jenny Kluth  
-**Deployment:** https://u-jarvis-api.ashytree-79de396a.eastus.azurecontainerapps.io  
+**Deployment:** [u-jarvis-api.ashytree-79de396a.eastus.azurecontainerapps.io](https://u-jarvis-api.ashytree-79de396a.eastus.azurecontainerapps.io)  
 **Build:** 2026.07.29-hardened (revision 3 — crisis regex fix)  
 **Result:** PASS (22/22 checks, 0 failures)
 

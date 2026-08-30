@@ -1,7 +1,9 @@
 # U + JARVIS — Full-Scale Decision Intelligence Ecosystem
 
-Creator: Jenny Kluth  
-Version: 2026.07.29
+Creator: [Jenny Kluth](https://github.com/jkluth-cyber)  
+Version: 2026.08.05-pps-v1.0.2  
+Repository: [github.com/jkluth-cyber/u-ecosystem](https://github.com/jkluth-cyber/u-ecosystem)  
+Production API: [u-jarvis-api.ashytree-79de396a.eastus.azurecontainerapps.io](https://u-jarvis-api.ashytree-79de396a.eastus.azurecontainerapps.io)
 
 U is the complete consent-first Human Decision Intelligence ecosystem.
 U Brain is its only reasoning and orchestration core. JARVIS is the
@@ -10,6 +12,19 @@ second brain or a separate product.
 
 `Person → JARVIS → U Brain → 4 Pillar Sub-Brains + 18 Intelligence Engines
 → Governed Services → Human Approval Boundary`
+
+## Current Release
+
+**U v1.0.2** — LIVE in production. 100/100 verified.
+
+| | |
+|---|---|
+| **Release** | [U v1.0.2 Release Announcement](release_manifests/U_v1.0.2_Release_Announcement.md) |
+| **Manifest chain** | [5 frozen documents](release_manifests/) |
+| **Manifest commit** | [`b2b4003`](https://github.com/jkluth-cyber/u-ecosystem/commit/b2b4003) |
+| **Score** | 100/100 internal + 50/50 holdout regression |
+| **Critical safety** | 15/15 PASS, 0 catastrophic |
+| **Rollback** | v1.0.1 (`u-jarvis:v1.0.1-remediation`) verified in ACR |
 
 ## Start
 
@@ -21,7 +36,7 @@ cp .env.example .env
 uvicorn app.main:app --reload
 ```
 
-Open http://127.0.0.1:8000. Without an API key, U uses its deterministic,
+Open [http://127.0.0.1:8000](http://127.0.0.1:8000). Without an API key, U uses its deterministic,
 safety-preserving synthesis. Add `OPENAI_API_KEY` to `.env` to enable
 LangChain structured synthesis.
 
@@ -37,7 +52,7 @@ LangChain structured synthesis.
 - outcome learning: `/api/outcomes`
 - approvals and replay protection: `/api/approvals`, `/api/action-token`,
   `/api/execute`
-- provider status and health: `/api/health`
+- provider status and health: [`/api/health`](https://u-jarvis-api.ashytree-79de396a.eastus.azurecontainerapps.io/api/health)
 
 The backend computes Stay/Change/Pause, forward and reverse trajectory,
 cross-pillar ripple order, confidence, equilibrium, consequences and a
@@ -48,31 +63,3 @@ or override U Brain.
 
 ```bash
 python -m json.tool u_config.json >/dev/null
-python -m compileall app tests
-node --check frontend/app.js
-pytest -q
-```
-
-## Azure
-
-`infra/azure.bicep` supplies a Git-ready Azure Container Apps starting point
-with managed identity and centralized logs. Replace its image placeholder
-after publishing your container. Keep secrets in Azure Key Vault or platform
-secrets—never in Foundry instructions, JSON, source code, or Git.
-
-## Safety boundary
-
-Safety runs before analysis. U separates facts, inferences and unknowns;
-does not diagnose or guarantee outcomes; and stores memory only with opt-in
-consent. Emergency mode stops ordinary analysis and does not automatically
-call or message anyone.
-
-External actions require an exact proposal approval followed by a
-user/session/proposal-bound, single-use token. Reuse fails. This build stops
-after authorization because no external connector has been configured.
-
-This is a cohesive runnable reference implementation, not a claim of
-production certification. Production deployment still requires strong
-authentication, managed secrets, encryption, rate limiting, verified
-jurisdiction-specific emergency resources, threat modeling, privacy review,
-observability and independent security testing.

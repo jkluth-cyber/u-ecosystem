@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-1. **Azure CLI** — install from https://aka.ms/azure-cli
+1. **Azure CLI** — install from [aka.ms/azure-cli](https://aka.ms/azure-cli)
 2. **Login** — run `az login` and select your subscription
 3. **U_SHARED_SECRET** — you already set this in Base44. Use the same value here.
 
