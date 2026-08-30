@@ -1,9 +1,19 @@
+> ## ⬡ U v1.0.2 — OFFICIAL FROZEN RELEASE ⬡
+> 
+> **Document Status:** FROZEN · IMMUTABLE · PUBLIC  
+> **Datestamp:** 2026-08-30T06:51:06 UTC  
+> **Repository:** [github.com/jkluth-cyber/u-ecosystem](https://github.com/jkluth-cyber/u-ecosystem)
+
+---
+
 # U + JARVIS — Full-Scale Decision Intelligence Ecosystem
 
 Creator: [Jenny Kluth](https://github.com/jkluth-cyber)  
 Version: 2026.08.05-pps-v1.0.2  
 Repository: [github.com/jkluth-cyber/u-ecosystem](https://github.com/jkluth-cyber/u-ecosystem)  
-Production API: [u-jarvis-api.ashytree-79de396a.eastus.azurecontainerapps.io](https://u-jarvis-api.ashytree-79de396a.eastus.azurecontainerapps.io)
+Production API: [u-jarvis-api.ashytree-79de396a.eastus.azurecontainerapps.io](https://u-jarvis-api.ashytree-79de396a.eastus.azurecontainerapps.io)  
+Health Check: [/api/health](https://u-jarvis-api.ashytree-79de396a.eastus.azurecontainerapps.io/api/health)  
+Status: 🟢 LIVE · 🏷️ FROZEN · 📦 PUBLIC · Datestamp: 2026-08-30T06:51:06 UTC
 
 U is the complete consent-first Human Decision Intelligence ecosystem.
 U Brain is its only reasoning and orchestration core. JARVIS is the
@@ -59,7 +69,6 @@ cross-pillar ripple order, confidence, equilibrium, consequences and a
 14-day review. The interface renders these outputs; it does not recalculate
 or override U Brain.
 
-## Validate
-
-```bash
-python -m json.tool u_config.json >/dev/null
+> **⬡ U v1.0.2 — FROZEN · IMMUTABLE · PUBLIC ⬡**  
+> *Datestamp: 2026-08-30T06:51:06 UTC*  
+> *Any modification to this release invalidates its integrity.*
