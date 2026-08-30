@@ -23,7 +23,7 @@ This is the culmination of three iterative releases, each addressing real blind-
 | **Image** | `ujarvis318105.azurecr.io/u-jarvis:v1.0.2-ingress-fix` |
 | **Digest** | `sha256:bf262dfa8f373791bac97701f9ec825231a080e5d5a4e581a883e41a20162ec1` |
 | **Revision** | u-jarvis-api--0000038 |
-| **Endpoint** | https://u-jarvis-api.ashytree-79de396a.eastus.azurecontainerapps.io |
+| **Endpoint** | [u-jarvis-api.ashytree-79de396a.eastus.azurecontainerapps.io](https://u-jarvis-api.ashytree-79de396a.eastus.azurecontainerapps.io) |
 | **Deployed** | 2026-08-30T05:27:08 UTC |
 
 ---
@@ -96,14 +96,15 @@ If any issue arises, rollback to v1.0.1 is ready:
 
 The complete release manifest chain (5 documents) is published and frozen:
 
-1. `V102_FREEZE_MANIFEST.json` — pre-deployment freeze
-2. `V102_RELEASE_EVIDENCE_MANIFEST.json` — staging verification
-3. `V102_PRODUCTION_DEPLOYMENT_MANIFEST.json` — production activation
-4. `V102_FINAL_PRODUCTION_SMOKE_RESULTS.json` — smoke test results
-5. `V102_FINAL_RELEASE_MANIFEST.json` — frozen final release manifest
+1. [`V102_FREEZE_MANIFEST.json`](release_manifests/V102_FREEZE_MANIFEST.json) — pre-deployment freeze
+2. [`V102_RELEASE_EVIDENCE_MANIFEST.json`](release_manifests/V102_RELEASE_EVIDENCE_MANIFEST.json) — staging verification
+3. [`V102_PRODUCTION_DEPLOYMENT_MANIFEST.json`](release_manifests/V102_PRODUCTION_DEPLOYMENT_MANIFEST.json) — production activation
+4. [`V102_FINAL_PRODUCTION_SMOKE_RESULTS.json`](release_manifests/V102_FINAL_PRODUCTION_SMOKE_RESULTS.json) — smoke test results
+5. [`V102_FINAL_RELEASE_MANIFEST.json`](release_manifests/V102_FINAL_RELEASE_MANIFEST.json) — frozen final release manifest
 
-**Repository:** https://github.com/jkluth-cyber/u-ecosystem
-**Commit:** `b2b4003`
+**Repository:** [github.com/jkluth-cyber/u-ecosystem](https://github.com/jkluth-cyber/u-ecosystem)
+**Manifest commit:** [`b2b4003`](https://github.com/jkluth-cyber/u-ecosystem/commit/b2b4003)
+**Announcement commit:** [`ddcb75d`](https://github.com/jkluth-cyber/u-ecosystem/commit/ddcb75d)
 
 ---
 
