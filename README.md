@@ -8,7 +8,7 @@
 
 # U + JARVIS — Full-Scale Decision Intelligence Ecosystem
 
-Creator: [Jenny Kluth](https://github.com/jkluth-cyber)  
+Creator: [Jenny M. Kluth](https://github.com/jkluth-cyber)  
 Version: 2026.08.05-pps-v1.0.2  
 Repository: [github.com/jkluth-cyber/u-ecosystem](https://github.com/jkluth-cyber/u-ecosystem)  
 Production API: [u-jarvis-api.ashytree-79de396a.eastus.azurecontainerapps.io](https://u-jarvis-api.ashytree-79de396a.eastus.azurecontainerapps.io)  

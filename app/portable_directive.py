@@ -15,7 +15,7 @@ Key principle: The cognitive contract travels with U, not with the API.
 When U embeds in a different LLM, the same governance applies because the
 directive is the cognitive identity, not the system prompt.
 
-Creator: Jenny Kluth
+Creator: Jenny M. Kluth
 Version: 2026.08.05-project4d
 """
 from __future__ import annotations

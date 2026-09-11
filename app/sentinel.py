@@ -20,7 +20,7 @@ Three-layer architecture:
 This moves U from L4 (externally governed) to L5-adjacent (self-governing
 cognition) while preserving human agency as the foundational constraint.
 
-Creator: Jenny Kluth
+Creator: Jenny M. Kluth
 Version: 2026.08.05-project4d
 """
 from __future__ import annotations

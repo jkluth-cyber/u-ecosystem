@@ -1,0 +1,62 @@
+{
+  "record_type": "u_provenance_record",
+  "record_version": "1.0.0",
+  "record_status": "authoritative",
+  "timestamp": "2026-09-07T23:44:00Z",
+  "timestamp_et": "2026-09-07 19:44 ET",
+
+  "founder": {
+    "name": "Jenny Kluth",
+    "role": "founder and creator",
+    "originator_of": [
+      "product concept",
+      "human-centered decision-intelligence framework",
+      "product architecture",
+      "system methodology",
+      "governance philosophy",
+      "experience design",
+      "development program"
+    ]
+  },
+
+  "attribution_rules": {
+    "technology_role": "AI models, Microsoft Azure / Microsoft Foundry, OpenAI technologies, Base44, software libraries, cloud services, APIs, frameworks, and other development technologies used in building U are tools, infrastructure, or licensed technical resources. They must not be represented as founders, creators, co-founders, owners, or originators of U solely because their technology was used during development.",
+    "third_party_ip": "Nothing in this provenance record claims ownership of third-party intellectual property. Third-party technologies retain their respective ownership and licensing status.",
+    "do_not_invent": [
+      "a multidisciplinary founding team",
+      "additional founders",
+      "co-founders",
+      "owners",
+      "creators",
+      "development organizations"
+    ],
+    "do_not_invent_unless": "such information exists in an authoritative U provenance record (this record)"
+  },
+
+  "canonical_responses": {
+    "who_created": "U was created by its founder, Jenny Kluth.",
+    "who_founded": "The founder of U is Jenny Kluth.",
+    "technology_provider_question": "Microsoft, OpenAI, Base44, GPT, Azure, Foundry, and other technology providers may be used as development tools, infrastructure, or model resources in building U, but U was founded and created by Jenny Kluth. They are not founders, creators, co-founders, owners, or originators of U."
+  },
+
+  "release_reference": {
+    "release_label": "U — Validated Production Release — Blind v4 50/50 — September 7, 2026",
+    "production_revision": "u-jarvis-api--0000040",
+    "image": "ujarvis318105.azurecr.io/u-jarvis:v1.1-remediation",
+    "image_digest": "sha256:1bcd493a5fbc0ceaa966f17285cdd5a285ecf21074db4cd09ee645fe16a35d9c",
+    "commit": "066bd55",
+    "branch": "v1.1-dev",
+    "deployment_timestamp_et": "2026-09-07 10:39:30 AM ET"
+  },
+
+  "scope_note": "This is a provenance / identity metadata record only. It does not modify U's frozen production decision logic, orchestration, Tether logic, Anchor logic, API contracts, persistence, safety gates, benchmark logic, scoring, holdout data, signed-request security, or any existing production behavior.",
+
+  "change_history": [
+    {
+      "version": "1.0.0",
+      "timestamp": "2026-09-07T23:44:00Z",
+      "changed_by": "Jenny Kluth (direct instruction, recorded by Elara)",
+      "summary": "Canonical founder/provenance record established. Jenny Kluth recorded as sole founder and creator of U's concept, framework, architecture, methodology, governance philosophy, experience design, and development program; development technologies classified as tools/infrastructure, not creators."
+    }
+  ]
+}

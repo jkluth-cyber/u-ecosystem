@@ -20,7 +20,7 @@ function as a system." Full-scale PSI means the four dimensions are
 not just present — they are coordinated through a lifecycle that persists,
 adapts, and evolves across every interaction.
 
-Creator: Jenny Kluth
+Creator: Jenny M. Kluth
 Version: 2026.08.05-project4d-ppsi
 """
 from __future__ import annotations

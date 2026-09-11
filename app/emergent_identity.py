@@ -22,7 +22,7 @@ The emergent identity layer:
   4. Ensures the identity evolution preserves the core contract (the
      12 principles are immutable — they're the DNA, not the phenotype)
 
-Creator: Jenny Kluth
+Creator: Jenny M. Kluth
 Version: 2026.08.05-project4d
 """
 from __future__ import annotations

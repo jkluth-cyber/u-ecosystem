@@ -16,7 +16,7 @@ This module implements:
   - Dual Path Generation — behavioral (Stay/Change/Pause) + 
     growth (Stabilize/Grow/Transform)
 
-Creator: Jenny Kluth
+Creator: Jenny M. Kluth
 Version: 2026.08.05-project4d-ppsi
 """
 from __future__ import annotations

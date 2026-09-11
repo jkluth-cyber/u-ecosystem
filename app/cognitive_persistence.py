@@ -19,7 +19,7 @@ All stored as abstracted patterns, not raw data. The system remembers HOW you
 think, not WHAT you said. This is the fundamental difference between memory
 and cognitive persistence.
 
-Creator: Jenny Kluth
+Creator: Jenny M. Kluth
 Version: 2026.08.05-project4d
 """
 from __future__ import annotations

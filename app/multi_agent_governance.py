@@ -18,7 +18,7 @@ Each agent:
 
 The Sentinel doesn't tell agents what to think. It shapes HOW they think.
 
-Creator: Jenny Kluth
+Creator: Jenny M. Kluth
 Version: 2026.08.05-project4d
 """
 from __future__ import annotations
