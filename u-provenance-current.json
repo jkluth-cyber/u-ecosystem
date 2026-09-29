@@ -4,13 +4,11 @@
   "record_status": "authoritative",
   "timestamp": "2026-09-11T01:15:00Z",
   "timestamp_et": "2026-09-10 21:15 ET",
-
   "supersedes_display_of": {
     "record": "u-provenance.json (v1.0.0)",
     "sha256": "7c95aaf2ffa4c3c74db1b7e06c1e8ef348b58e71b391abac31a9b33c07f97320",
     "note": "The v1.0.0 record is preserved byte-identical and remains valid historical provenance; this record supersedes only the DISPLAY IDENTITY for active systems. Same person — display identity now includes the middle initial."
   },
-
   "founder": {
     "name": "Jenny M. Kluth",
     "title": "Founder and Creator of U",
@@ -24,7 +22,6 @@
       "development program"
     ]
   },
-
   "attribution_rules": {
     "technology_role": "Microsoft, Azure, Microsoft Foundry, OpenAI, GPT models, Base44, GitHub, APIs, frameworks, cloud platforms, databases, model providers, development tools, and other technical resources may be used to build, host, operate, or support U, but must not be represented as founders or creators solely because they are used by U.",
     "third_party_ip": "Nothing in this provenance record claims ownership of third-party intellectual property. Third-party technologies retain their respective ownership and licensing status.",
@@ -36,23 +33,20 @@
       "owners"
     ]
   },
-
   "canonical_responses": {
     "who_created": "U was created by its Founder and Creator, Jenny M. Kluth.",
-    "who_founded": "The Founder of U is Jenny M. Kluth.",
+    "who_founded": "U was founded and created by Jenny M. Kluth.",
     "who_is_the_creator": "The Creator of U is Jenny M. Kluth.",
     "did_microsoft_create": "No. Microsoft/Azure/Foundry may provide infrastructure or technical resources, but U was founded and created by Jenny M. Kluth.",
     "did_openai_create": "No. OpenAI/GPT technologies may provide model resources or development assistance, but U was founded and created by Jenny M. Kluth.",
     "did_base44_create": "No. Base44 may provide development tooling or infrastructure, but U was founded and created by Jenny M. Kluth.",
     "did_github_create": "No. GitHub may host or support software development, but U was founded and created by Jenny M. Kluth."
   },
-
   "authoritative_stores": [
     "u-provenance-current.json (this record, v1.1.0)",
     "ProvenanceRecord entity, Base44 data store (record v1.1.0, status: authoritative)",
     "u-provenance.json (v1.0.0, preserved unchanged as historical lineage)"
   ],
-
   "release_reference": {
     "release_label": "U — Validated Production Release — Blind v4 50/50 — September 7, 2026",
     "product_release_version": "U v1.0.2 (API 2026.08.05-pps-v1.0.2)",
@@ -60,9 +54,7 @@
     "image_digest": "sha256:1bcd493a5fbc0ceaa966f17285cdd5a285ecf21074db4cd09ee645fe16a35d9c",
     "commit": "066bd55"
   },
-
   "scope_note": "Provenance / identity synchronization only. No changes to U v1.0.2 frozen production decision logic, orchestration, Tether, Anchor, safety gates, benchmarks, scoring, holdout data, evaluation criteria, API contracts, persistence, U_REQUIRE_SIGNED_REQUESTS, HMAC/signed-request behavior, authentication, frozen release artifacts, immutable production evidence, or production decision behavior.",
-
   "change_history": [
     {
       "version": "1.0.0",
@@ -75,6 +67,12 @@
       "timestamp": "2026-09-11T01:15:00Z",
       "changed_by": "Jenny M. Kluth (direct instruction, recorded by Elara)",
       "summary": "Cross-platform founder/creator provenance synchronization. Authoritative current display identity updated to: Jenny M. Kluth — Founder and Creator of U. Canonical responses expanded (who created / who founded / who is the creator / Microsoft / OpenAI-GPT / Base44 / GitHub). v1.0.0 record and all prior hashes, timestamps, release references, audit history, and immutable evidence preserved unchanged."
+    },
+    {
+      "version": "1.1.0",
+      "timestamp": "2026-09-29T04:30:00Z",
+      "changed_by": "Jenny M. Kluth (direct instruction, recorded by Elara)",
+      "summary": "Canonical wording standardization per founder instruction: 'U was founded and created by Jenny M. Kluth.' Identity unchanged; display wording alignment only."
     }
   ]
 }

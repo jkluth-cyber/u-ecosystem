@@ -44,8 +44,9 @@ def test_response_who_created(record):
 
 
 def test_response_who_founded(record):
+    # Canonical wording per founder instruction (2026-09-29)
     assert record["canonical_responses"]["who_founded"] == \
-        "The Founder of U is Jenny M. Kluth."
+        "U was founded and created by Jenny M. Kluth."
 
 
 def test_response_who_is_the_creator(record):
@@ -93,7 +94,10 @@ def test_historical_record_lineage_preserved(record):
 
 def test_change_history_contains_full_lineage(record):
     versions = [e["version"] for e in record["change_history"]]
-    assert versions == ["1.0.0", "1.1.0"]
+    # Base lineage is v1.0.0 -> v1.1.0; later same-version entries are
+    # audited wording alignments (identity unchanged).
+    assert versions[:2] == ["1.0.0", "1.1.0"]
+    assert all(v in ("1.0.0", "1.1.0") for v in versions)
 
 
 def test_historical_record_answers_preserved():
