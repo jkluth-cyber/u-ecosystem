@@ -150,7 +150,6 @@ class UOrchestrator:
         """
         if not self._has_llm():
             # ── PSI Lifecycle — Evolve + Persist in deterministic mode ────
-            from .cognitive_persistence import cognitive_persistence
             cognitive_profile = cognitive_persistence.get_cognitive_context(req.user_id)
             psi_lifecycle.evolve(
                 req.user_id,
@@ -264,7 +263,7 @@ class UOrchestrator:
                 source = f"Sentinel synthesis (truncated to {_MAX_WORDS} words from {word_count})"
 
             # ── PSI Lifecycle — Govern + Evolve + Persist ────────────────
-            governance_result = psi_lifecycle.govern(text, 0.7, ctx.risk)
+            governance_result = psi_lifecycle.govern(recommendation, 0.7, ctx.risk)
             psi_evolution = psi_lifecycle.evolve(
                 req.user_id,
                 {"title": req.title, "situation": req.situation, "pillars": req.pillars},
@@ -299,6 +298,9 @@ class UOrchestrator:
                 "sentinel": sentinel_info,
             }
         except Exception as exc:
+            import traceback as _tb
+            _tb_str = _tb.format_exc()
+            _error_line = chr(10).join(_tb_str.strip().split(chr(10))[-5:])
             # ── PSI Lifecycle — Persist even on LLM failure ──────────────
             from .cognitive_persistence import cognitive_persistence as _cp
             _profile = _cp.get_cognitive_context(req.user_id)
@@ -313,7 +315,7 @@ class UOrchestrator:
                 _profile,
             )
             return {
-              "source": f"safe fallback after model error: {type(exc).__name__}",
+              "source": f"safe fallback after model error: {type(exc).__name__} at: {_error_line.strip()}",
               "recommendation": "Pause irreversible action and gather the most decision-relevant evidence.",
               "rationale": ["Sentinel preserved a safe response when model synthesis was unavailable."],
               "questions": ["Which unknown has the highest consequence if assumed incorrectly?"],
